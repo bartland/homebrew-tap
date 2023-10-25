@@ -1,8 +1,8 @@
-class Libxmlsec1AT131 < Formula
+class Libxmlsec1AT1238 < Formula
   desc "XML security library"
   homepage "https://www.aleksey.com/xmlsec/"
-  url "https://www.aleksey.com/xmlsec/download/xmlsec1-1.3.1.tar.gz"
-  sha256 "10f48384d4fd1afc05fea545b74fbf7c152582f0a895c189f164d55270400c63"
+  url "https://www.aleksey.com/xmlsec/download/xmlsec1-1.2.38.tar.gz"
+  sha256 "9de8cf8d7d2e288a9cef205cc6cb93c926a67dadfaf44aaff76ed63c28ce9902"
   license "MIT"
   revision 1
 
@@ -16,7 +16,7 @@ class Libxmlsec1AT131 < Formula
   depends_on "gnutls" # Yes, it wants both ssl/tls variations
   depends_on "libgcrypt"
   depends_on "libxml2"
-  depends_on "openssl@3"
+  depends_on "openssl@1.1"
   uses_from_macos "libxslt"
 
   # Add HOMEBREW_PREFIX/lib to dl load path
@@ -31,7 +31,7 @@ class Libxmlsec1AT131 < Formula
             "--with-nspr=no",
             "--enable-mscrypto=no",
             "--enable-mscng=no",
-            "--with-openssl=#{Formula["openssl@3"].opt_prefix}"]
+            "--with-openssl=#{Formula["openssl@1.1"].opt_prefix}"]
 
     system "./configure", *args
     system "make", "install"
